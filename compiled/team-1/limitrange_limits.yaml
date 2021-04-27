@@ -4,9 +4,12 @@ kind: LimitRange
 metadata:
   annotations:
     configmanagement.gke.io/cluster-name: defaultcluster
-    configmanagement.gke.io/source-path: namespaces/limit-range.yaml
+    configmanagement.gke.io/source-path: config/namespaces/limit-range.yaml
+    configsync.gke.io/declared-fields: '{"f:spec":{"f:limits":{}}}'
+  labels:
+    configsync.gke.io/declared-version: v1
   name: limits
-  namespace: team-2
+  namespace: team-1
 spec:
   limits:
   - max:
